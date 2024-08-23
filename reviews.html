@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Review</title>
+    <link rel="icon" type="EAMCETvibe.png" sizes="16x16" href="https://i.ibb.co/5T4N9ZS/EAMCETvibe.png" alt="EAMCETvibe"></a>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #432121, #593f5f);
+            margin: 0%;
+        }
+
+        header {
+            background-color: #2f2c2c;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-bottom: 5px solid #efe5e3;
+        }
+
+        nav {
+            background-color: #2f2c2c;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #030000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #432121;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e5d4d4;
+            border-radius: 50px;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .book {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book:hover {
+            background-color: #f5f5f5;
+        }
+
+        .book img {
+            max-width: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .book h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .book p {
+            color: #777;
+        }
+
+        .review {
+            margin-top: 10px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        .navbar {
+            color: #ddd;
+        }
+        .color {
+            color: rgb(229, 223, 215);
+        }
+        #profileIconLink {
+    text-decoration: none;
+}
+
+#profileIcon {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="color">EAMCETvibe</h1>
+    </header>
+
+    <nav>
+        <a class="navbar" href="home.html">Home</a>
+        <a class="navbar" href="books.html">Books</a>
+        <a class="navbar" href="reviews.html">Reviews</a>
+        <a class="navbar" href="aboutus.html">About Us</a>
+        <a style="float: right;" class="navbar" href="favourite.html">My Favourites</a>
+        <a style="float: right;" class="navbar" href="loginpage.html">Login</a>
+        <a class="navbar" href="search.html">Search for some books?</a>
+        <a style="float: right;" href="profile.html" id="profileIconLink">
+            <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?w=2000" alt="Profile Icon" id="profileIcon">
+        </a>
+    
+    </nav>
+        <div id="reviewContainer" style="display:none;">
+            <h2 id="reviewTitle"></h2>
+            <div id="reviewContent" class="review"></div>
+        </div>
+        <div class="container">
+            <h2>Review a Book here!!</h2>
+
+            <label>Book Name:</label>
+            <textarea id="bookname" rows="1" placeholder="Enter Book Name..."></textarea>
+    
+            <label for="rating">Rating (1 to 5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5">
+    
+            <label>Review:</label>
+            <textarea id="review" rows="6" placeholder="Enter your review..."></textarea>
+    
+            <label>Overall Impression:</label>
+            <label for="good"><input type="radio" id="good" name="impression" value="good"> Good</label>
+            <label for="bad"><input type="radio" id="bad" name="impression" value="bad"> Bad</label>
+            <label for="excellent"><input type="radio" id="excellent" name="impression" value="excellent"> Excellent</label>
+    
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+    
+      
+    
+
+    <script>
+        function showBooks() {
+            document.getElementById('booksContainer').style.display = 'block';
+        }
+
+        function showReview(title, author, image, content) {
+            document.getElementById('booksContainer').style.display = 'none';
+            document.getElementById('reviewContainer').style.display = 'block';
+
+            document.getElementById('reviewTitle').innerText = title + ' by ' + author;
+            document.getElementById('reviewContent').innerText = content;
+        }
+            function submitReview() {
+
+        const bookTitle = "Book Title"; 
+
+        const bookname = document.getElementById('bookname').value;
+        const rating = document.getElementById('rating').value;
+        const review = document.getElementById('review').value;
+        const impression = document.querySelector('input[name="impression"]:checked')?.value;
+        if (!bookname || !rating || !review || !impression) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        const bookReview = {
+            bookname: bookname,
+            rating: rating,
+            review: review,
+            impression: impression,
+        };
+
+        const existingReviews = JSON.parse(localStorage.getItem(bookTitle)) || [];
+        existingReviews.push(bookReview);
+
+     
+        localStorage.setItem(bookTitle, JSON.stringify(existingReviews));
+        alert("Review submitted successfully!");
+        window.location.href = 'books.html';
+    }
+</script>
+
+
+</body>
+</html>

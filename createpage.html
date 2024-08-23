@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="icon" type="EAMCETvibe.png" sizes="16x16" href="https://i.ibb.co/5T4N9ZS/EAMCETvibe.png" alt="EAMCETvibe"></a>
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background: linear-gradient(45deg, #432121, #593f5f);
+        }
+
+header {
+            background-color: #2f2c2c;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-bottom: 5px solid #efe5e3;
+        }
+
+        nav {
+            background-color: #2f2c2c;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #030000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #432121;
+        }
+        .container {
+    background-color: #fce1e1;
+    padding: 30px;
+    border-radius: 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+    
+    h1 {
+        color: #333;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    label {
+        margin-top: 10px;
+        color: #555;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    .navbar {
+            color: #ddd;
+        }
+        .color {
+            color: rgb(229, 223, 215);
+        }
+        #profileIconLink {
+    text-decoration: none;
+}
+
+#profileIcon {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%;
+}
+       </style>
+        
+</head>
+<body>
+    <header>
+        <h1 class="color">EAMCETvibe</h1>
+    </header>
+
+    <nav>
+        <a class="navbar" href="home.html">Home</a>
+        <a class="navbar" href="books.html">Books</a>
+        <a class="navbar" href="reviews.html">Reviews</a>
+        <a class="navbar" href="aboutus.html">About Us</a>
+        <a style="float: right;" class="navbar" href="favourite.html">My Favourites</a>
+        <a style="float: right;" class="navbar" href="loginpage.html">Login</a>
+        <a class="navbar" href="search.html">Search for some books?</a>
+        <a style="float: right;" href="profile.html" id="profileIconLink">
+            <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg?w=2000" alt="Profile Icon" id="profileIcon">
+        </a>
+    
+    </nav>
+    <div class="container">
+        <h1>Sign up</h1>
+        <form id="loginForm">
+            <label for="email">Email</label>
+            <input type="text" id="Email" required>
+
+            <label for="password">Set a Password:</label>
+            <input type="password" id="password" required>
+
+            
+
+            <button type="submit">Sign in</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Account created!!');
+        window.location.href = 'home.html';
+    });
+});
+    </script>
+</body>
+</html>

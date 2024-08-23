@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="bookReviews"></div>
+
+
+
+    <script>
+        // Retrieve reviews for a specific book from local storage
+        const bookTitle = "Book Title"; // Replace with actual title or identifier
+        const reviews = JSON.parse(localStorage.getItem(bookTitle)) || [];
+
+        // Display reviews on the page
+        const bookReviewsContainer = document.getElementById('bookReviews');
+        reviews.forEach(review => {
+            const reviewElement = document.createElement('div');
+            reviewElement.innerHTML = `<p>Book Name: ${review.bookname}</p>
+                                       <p>Rating: ${review.rating}</p>
+                                        <p>Review: ${review.review}</p>
+                                        <p>Overall Impression: ${review.impression}</p>
+                                        <hr>`;
+            bookReviewsContainer.appendChild(reviewElement);
+        });
+    </script>
+</body>
+</html>
